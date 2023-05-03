@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Shop</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            font-size: 3em;
+        }
+
+        h3 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .card {
+            margin-bottom: 250px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            background-color: #967E76;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-header3 {
+            background-color: #D7C0AE;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-header4 {
+            background-color: #EEE3CB;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-header5 {
+            background-color: #B7C4CF;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .btn-secondary {
+            background-color: #D7C0AE;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-dark {
+            background-color: #EEE3CB;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-info {
+            background-color: #B7C4CF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .row {
+            justify-content: space-evenly;
+            display: flex
+        }
+
+        .container {
+            max-width: 1000px; /* 좌우 최대 길이를 줄임 */
+            margin: 0 auto; /* 가운데 정렬 */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2>SIMPLE SHOP</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card mb-3">
+                        <div class="card-header3">
+                            <h3>회원 기능</h3>
+                        </div>
+                        <div class="card-body">
+                            <a class="btn btn-block btn-secondary" href="/members/new">회원 가입</a>
+                            <a class="btn btn-block btn-secondary" href="/members">회원 목록</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card mb-3">
+                        <div class="card-header4">
+                            <h3>상품 기능</h3>
+                        </div>
+                        <div class="card-body">
+                            <a class="btn btn-block btn-dark" href="/items/new">상품 등록</a>
+                            <a class="btn btn-block btn-dark" href="/items">상품 목록</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card mb-3">
+                        <div class="card-header5">
+                            <h3>주문 기능</h3>
+                        </div>
+                        <div class="card-body">
+                            <a class="btn btn-block btn-info" href="/order">상품 주문</a>
+                            <a class="btn btn-block btn-info" href="/orders">주문 내역</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

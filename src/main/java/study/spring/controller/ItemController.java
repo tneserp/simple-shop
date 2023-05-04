@@ -45,4 +45,10 @@ public class ItemController {
         model.addAttribute("item", findItem);
         return "items/updateItemForm";
     }
+
+    @PostMapping("/items/{id}/edit")
+    public String updateItem(@PathVariable Long id, @ModelAttribute Item item) {
+        itemService.updateItem(id, item);
+        return "redirect:/items";
+    }
 }

@@ -13,14 +13,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Member {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     @Embedded
     private Address address;
 
-    public Member(Long id, Address address) {
-        this.id = id;
+    public Member(Address address) {
         this.address = address;
     }
 }

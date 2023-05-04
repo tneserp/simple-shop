@@ -30,6 +30,7 @@ public class ItemService {
         /**
          * id를 굳이 파라미터로 받아야할까
          * 일단 get() 사용
+         * item.update(itemDto) 형식으로 하는게 더 객체지향적일 것 같다.
          */
         Item findItem = itemRepository.findById(id).get();
         findItem.setName(item.getName());

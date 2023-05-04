@@ -17,10 +17,13 @@ public class Member {
     @GeneratedValue
     private Long id;
 
+    private String name;
+
     @Embedded
     private Address address;
 
-    public Member(Address address) {
+    public Member(String name, Address address) {
+        this.name = name;
         this.address = address;
     }
 }

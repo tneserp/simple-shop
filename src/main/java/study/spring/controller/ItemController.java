@@ -1,5 +1,6 @@
 package study.spring.controller;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +27,13 @@ public class ItemController {
     public String create(@ModelAttribute ItemForm itemForm) {
         itemService.join(new Item(itemForm.getName(), itemForm.getPrice(), itemForm.getStockQuantity(),
                 itemForm.getAuthor(), itemForm.getIsbn()));
-        return "redirect:/";
+        return "redirect:/items";
+    }
+
+    @GetMapping("/items")
+    public String itemList(Model model) {
+        List<Item> items = itemService.findAll();
+        model.addAttribute("items", items);
+        return "items/itemList";
     }
 }

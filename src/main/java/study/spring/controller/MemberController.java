@@ -1,5 +1,6 @@
 package study.spring.controller;
 
+import java.util.List;
 import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -31,8 +32,9 @@ public class MemberController {
         }
 
         memberService.join(
-                new Member(new Address(memberForm.getCity(), memberForm.getStreet(), memberForm.getZipcode())));
+                new Member(memberForm.getName(),new Address(memberForm.getCity(), memberForm.getStreet(), memberForm.getZipcode())));
 
-        return "members/memberList";
+        return "redirect:/members";
     }
+
 }

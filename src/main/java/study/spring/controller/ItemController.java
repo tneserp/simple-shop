@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import study.spring.domain.Item;
 import study.spring.domain.ItemForm;
@@ -35,5 +36,13 @@ public class ItemController {
         List<Item> items = itemService.findAll();
         model.addAttribute("items", items);
         return "items/itemList";
+    }
+
+    @GetMapping("/items/{id}/edit")
+    public String editItem(Model model, @PathVariable Long id) {
+        //Dto 넘겨주고 싶은데 id 값이 있어서 고민
+        Item findItem = itemService.findById(id);
+        model.addAttribute("item", findItem);
+        return "items/updateItemForm";
     }
 }

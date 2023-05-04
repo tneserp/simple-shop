@@ -1,5 +1,6 @@
 package study.spring.service;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,5 +16,12 @@ public class MemberService {
 
     public void join(Member member) {
         memberRepository.save(member);
+    }
+
+    /**
+     * 위임 할 필요 있을까?
+     */
+    public List<Member> findAll() {
+        return memberRepository.findAll();
     }
 }

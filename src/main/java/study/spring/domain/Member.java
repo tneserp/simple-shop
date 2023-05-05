@@ -19,7 +19,7 @@ public class Member {
 
     @Id
     @GeneratedValue
-    @Column(name = "memberId")
+    @Column(name = "member_Id")
     private Long id;
 
     private String name;

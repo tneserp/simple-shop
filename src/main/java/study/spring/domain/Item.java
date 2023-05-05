@@ -18,7 +18,7 @@ import lombok.Setter;
 public class Item {
 
     @Id @GeneratedValue
-    @Column(name = "itemId")
+    @Column(name = "item_Id")
     private Long id;
 
     private String name;

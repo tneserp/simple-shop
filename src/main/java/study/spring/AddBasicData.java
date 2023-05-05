@@ -46,7 +46,7 @@ public class AddBasicData {
         }
 
         public void add2() {
-            Member memberB = new Member("userA", new Address("부산", "2", "2222"));
+            Member memberB = new Member("userB", new Address("부산", "2", "2222"));
             em.persist(memberB);
 
             Item item = new Item("book2", 2000, 999, "ccc", "ddd");

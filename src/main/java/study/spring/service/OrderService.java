@@ -1,5 +1,6 @@
 package study.spring.service;
 
+import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,7 @@ import study.spring.domain.Item;
 import study.spring.domain.Member;
 import study.spring.domain.Order;
 import study.spring.domain.OrderItem;
+import study.spring.domain.OrderSearch;
 import study.spring.repository.ItemRepository;
 import study.spring.repository.MemberRepository;
 import study.spring.repository.OrderRepository;
@@ -35,5 +37,9 @@ public class OrderService {
     public void cancel(Long orderId) {
         Order order = orderRepository.findById(orderId).get();
         order.cancel();
+    }
+
+    public List<Order> findOrderSearch(OrderSearch orderSearch) {
+        return orderRepository.findOrderSearch(orderSearch);
     }
 }

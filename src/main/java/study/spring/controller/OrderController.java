@@ -49,13 +49,13 @@ public class OrderController {
 
     @GetMapping("/orders")
     public String orderList(Model model, @ModelAttribute OrderSearch orderSearch) {
-        List<Order> orders = new ArrayList<>();
+        List<Order> orders;
         if (orderSearch == null) {
             orders = orderRepository.findAll();
         } else {
             orders = orderRepository.findOrderSearch(orderSearch);
         }
-        model.addAttribute("orderSearch", new OrderSearch());
+        model.addAttribute("orderSearch", orderSearch);
         model.addAttribute("orders", orders);
 
         return "orders/orderList";

@@ -1,8 +1,12 @@
 package study.spring.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +18,7 @@ import lombok.Setter;
 public class Item {
 
     @Id @GeneratedValue
+    @Column(name = "itemId")
     private Long id;
 
     private String name;
@@ -21,6 +26,9 @@ public class Item {
     private int stockQuantity;
     private String author;
     private String isbn;
+
+    @OneToMany(mappedBy = "item")
+    private List<OrderItem> orderItems = new ArrayList<>();
 
     public Item(String name, int price, int stockQuantity, String author, String isbn) {
         this.name = name;

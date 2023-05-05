@@ -38,4 +38,7 @@ public class Item {
         this.isbn = isbn;
     }
 
+    public void removeStock(int orderCount) {
+        this.stockQuantity -= orderCount;
+    }
 }

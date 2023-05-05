@@ -43,11 +43,21 @@ public class OrderItem {
     public static OrderItem createOrderItem(Item item, int orderPrice, int orderCount) {
         OrderItem orderItem = new OrderItem();
         orderItem.setItem(item);
-        orderItem.order = null;
         orderItem.price = orderPrice;
         orderItem.count = orderCount;
 
         return orderItem;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderItem{" +
+                "id=" + id +
+                ", order=" + order +
+                ", item=" + item +
+                ", price=" + price +
+                ", count=" + count +
+                '}';
     }
 }
 

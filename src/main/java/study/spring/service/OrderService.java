@@ -20,4 +20,15 @@ public class OrderService {
     private final MemberRepository memberRepository;
     private final ItemRepository itemRepository;
 
+
+    public void join(Long memberId, Long itemId, int count) {
+        Member findMember = memberRepository.findById(memberId).get();
+        Item findItem = itemRepository.findById(itemId).get();
+
+        OrderItem orderItem = OrderItem.createOrderItem(findItem, findItem.getPrice(), count);
+        Order order = Order.createOrder(findMember, orderItem);
+        System.out.println("mmmmmmmmmmmmm");
+        System.out.println("orderItem = " + orderItem);
+        orderRepository.save(order);
+    }
 }

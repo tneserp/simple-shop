@@ -76,4 +76,9 @@ public class Order {
         return order;
     }
 
+    public void cancel() {
+        this.status = OrderStatus.CANCEL;
+        this.orderItems.get(0).getItem().addStock(orderItems.get(0).getCount());
+    }
+
 }

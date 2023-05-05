@@ -31,4 +31,9 @@ public class OrderService {
         System.out.println("orderItem = " + orderItem);
         orderRepository.save(order);
     }
+
+    public void cancel(Long orderId) {
+        Order order = orderRepository.findById(orderId).get();
+        order.cancel();
+    }
 }

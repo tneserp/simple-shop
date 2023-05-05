@@ -6,6 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import study.spring.domain.Item;
 import study.spring.domain.Member;
@@ -52,5 +53,11 @@ public class OrderController {
         model.addAttribute("orders", orders);
         System.out.println("orders.get(0) = " + orders.get(0));
         return "orders/orderList";
+    }
+
+    @PostMapping("orders/{orderId}/cancel")
+    public String cancelItem(@PathVariable Long orderId) {
+        orderService.cancel(orderId);
+        return "redirect:/";
     }
 }

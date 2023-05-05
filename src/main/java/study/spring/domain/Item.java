@@ -41,4 +41,8 @@ public class Item {
     public void removeStock(int orderCount) {
         this.stockQuantity -= orderCount;
     }
+
+    public void addStock(int orderCount) {
+        this.stockQuantity += orderCount;
+    }
 }

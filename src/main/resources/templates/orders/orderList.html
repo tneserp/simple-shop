@@ -135,16 +135,18 @@
                     <td th:text="${item.status}"></td>
                     <td th:text="${item.orderDate}"></td>
                     <td>
-                        <a th:if="${item.status.name() == 'ORDER'}" href="#"
-                           th:href="'javascript:cancel('+${item.id}+')'"
+                        <a th:if="${item.status.name() == 'COMPLETE'}" href="#" th:href="'javascript:cancel('+${item.id}+')'"
                            class="btn btn-danger">CANCEL</a>
                     </td>
                 </tr>
+
                 </tbody>
             </table>
         </div>
-    </div>
-</div> <!-- /container -->
+
+    </div> <!-- /container -->
+
+</body>
 <script>
     function cancel(id) {
         var form = document.createElement("form");
@@ -154,6 +156,7 @@
         form.submit();
     }
 </script>
+</html>
 
 
 

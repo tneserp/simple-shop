@@ -50,7 +50,6 @@ public class OrderController {
     @GetMapping("/orders")
     public String orderList(Model model, @ModelAttribute OrderSearch orderSearch) {
         List<Order> orders = orderRepository.findOrderSearch(orderSearch);
-        model.addAttribute("orderSearch", orderSearch);
         model.addAttribute("orders", orders);
 
         return "orders/orderList";

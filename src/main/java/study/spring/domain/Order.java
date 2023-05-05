@@ -1,11 +1,14 @@
 package study.spring.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -30,9 +33,11 @@ public class Order {
     @JoinColumn(name = "member_Id")
     private Member member;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItem = new ArrayList<>();
 
+    @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
     private LocalDateTime orderDate;

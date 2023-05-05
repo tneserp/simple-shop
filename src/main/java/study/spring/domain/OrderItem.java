@@ -1,5 +1,6 @@
 package study.spring.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -15,7 +16,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class OrderItem {
+
     @Id @GeneratedValue
+    @Column(name = "order_item_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
